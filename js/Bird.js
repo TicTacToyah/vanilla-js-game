@@ -25,21 +25,17 @@ export default class Bird {
     }
 
     addClickHandler() {
-        this.el.addEventListener('click', () => console.log('bird was shot'))
+        this.el.addEventListener('click', () => this.el.classList.add('hit'))
     }
 
     update() {
         this.position = this.position + this.speed
         if (this.position > window.innerWidth) {
             this.removeBird(this)
-            this.el.remove
+            this.el.remove()
         } else {
             this.el.style.left = this.position + 'px'
         }
-    }
-
-    destroy() {
-
     }
 
     render() {
